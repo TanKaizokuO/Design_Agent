@@ -1,5 +1,5 @@
 ---
-design_skill_initialized: true
+renkin_initialized: true
 ---
 
 # Design System

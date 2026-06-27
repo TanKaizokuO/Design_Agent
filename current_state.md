@@ -15,7 +15,7 @@ Last Updated: 2026-06-27
 - Status: ✅ Complete
 - Description: Gathers project requirements via CLI prompts and generates `PRODUCT.md` and `DESIGN.md` files to persist design context across sessions.
 - Files involved: `src/init.js`, `bin/cli.js`, `templates/skill.md`
-- Notes: Properly checks for existing `.design_skill/skill.md`, handles hex validation, and creates files atomically using temporary files.
+- Notes: Properly checks for existing `.renkin/skill.md`, handles hex validation, and creates files atomically using temporary files.
 
 ### Document System
 - Status: ✅ Complete

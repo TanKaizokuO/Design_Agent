@@ -1,11 +1,11 @@
 {
-  "name": "design_skill",
+  "name": "renkin",
   "version": "1.0.0",
-  "description": "design_skill CLI tool for generating premium web frontends",
+  "description": "Renkin CLI tool for generating premium web frontends",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "design_skill": "./bin/cli.js"
+    "renkin": "./bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
