@@ -1,3 +1,42 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build / Output
+dist/
+build/
+.nyc_output
+coverage/
+
+# OS / Environment
+.DS_Store
+Thumbs.db
+.env
+.env.*.local
+.env.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+*.tmp
+
+# Custom
 DG_FUNC_SPEC.MD
 specs/
 current_state.md
