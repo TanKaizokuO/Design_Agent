@@ -1,0 +1,15 @@
+{
+  "name": "design_skill",
+  "version": "1.0.0",
+  "description": "design_skill CLI tool for generating premium web frontends",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "design_skill": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
