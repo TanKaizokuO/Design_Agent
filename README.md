@@ -39,3 +39,12 @@ To see all available commands:
 ```bash
 design_skill --help
 ```
+
+#### `audit`
+Evaluate technical frontend quality and accessibility by recursively scanning your source files for design anti-patterns.
+
+```bash
+design_skill audit <target-directory>
+# Example: design_skill audit ./src
+```
+If no target is provided, it defaults to looking for a `./src` directory. Exit code is `1` if violations are found, `0` if clean.

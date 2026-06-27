@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { initProject } from '../src/init.js';
+import { runAudit } from '../src/audit.js';
 import { getValidCommands, generateHelpTable } from '../src/commands.js';
 
 function main() {
@@ -17,7 +18,7 @@ function main() {
   const validCommands = getValidCommands();
 
   if (!validCommands.includes(command)) {
-    console.error(`Error: Unrecognized command '${command}'\\n`);
+    console.error(`Error: Unrecognized command '${command}'\n`);
     console.log(generateHelpTable());
     process.exit(1);
   }
@@ -42,6 +43,9 @@ function main() {
 
   if (command === 'init') {
     initProject();
+  } else if (command === 'audit') {
+    const target = args[1];
+    runAudit(target);
   } else {
     // Dispatch stubs for all other valid commands
     console.log(`Command '${command}' is not yet implemented.`);
