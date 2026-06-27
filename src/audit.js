@@ -10,7 +10,7 @@ export function runAudit(targetDir) {
       target = './src';
     } else {
       console.error('Error: No target directory specified and ./src does not exist.');
-      console.error('Usage: design_skill audit <target>');
+      console.error('Usage: renkin audit <target>');
       process.exit(2);
     }
   }

@@ -107,7 +107,7 @@ export function runDocument(targetDir) {
   const designMdPath = path.join(process.cwd(), 'DESIGN.md');
   if (fs.existsSync(designMdPath)) {
     const content = fs.readFileSync(designMdPath, 'utf-8');
-    if (content.includes('design_skill_initialized: true')) {
+    if (content.includes('renkin_initialized: true')) {
       console.error('Error: DESIGN.md already exists and is initialized. Use a force flag (not yet implemented) to overwrite.');
       process.exit(1);
     }
@@ -128,7 +128,7 @@ Generate a DESIGN.md...
   console.log('--------------------------\n');
 
   let mdContent = '---\n';
-  mdContent += 'design_skill_initialized: true\n';
+  mdContent += 'renkin_initialized: true\n';
   mdContent += '---\n\n';
   mdContent += '# Design System\n\n';
   
