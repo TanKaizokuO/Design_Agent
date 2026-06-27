@@ -11,3 +11,4 @@ This skill provides instructions for generating premium web frontends according 
 1. Always read DESIGN.md and PRODUCT.md before making design decisions.
 2. Follow the 44 specific anti-patterns strictly.
 3. Keep the UI/UX visually stunning.
+4. When the user invokes a specific command like `/design_skill init`, refer to the specific command's prompt instructions to execute the workflow.
