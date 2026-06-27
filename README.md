@@ -1,10 +1,9 @@
-# [Insert Project Name]
+# Renkin
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![License](https://img.shields.io/badge/license-[License]-green.svg)
+![License](https://img.shields.io/badge/license-ISC-green.svg)
 
-> [Insert a 1-2 sentence description of what the project does and the problem it solves]
+> A CLI tool designed to assist in generating, iterating, and polishing premium web frontends by codifying design principles and product context into structured markdown files.
 
 ---
 
@@ -19,31 +18,26 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 
 ---
 
 ## About the Project
 
-[Insert Project Name] is designed to [expand slightly on your brief description to make it engaging]. It tackles the problem of [insert problem] by providing [insert solution/approach]. 
-
-Whether you are looking to [use case 1] or [use case 2], this project aims to offer a seamless and efficient experience.
+Renkin is a CLI tool that helps developers generate and iterate on premium web frontends. It works by keeping application state and contextual memory in stateless, localized Markdown files (`PRODUCT.md` and `DESIGN.md`) in your working directory. This codified context ensures your frontend remains polished and consistent across iterations.
 
 ## Features
 
-- **[Feature 1, e.g., User authentication]** - [Brief description]
-- **[Feature 2, e.g., Real-time chat]** - [Brief description]
-- **[Feature 3, e.g., Data visualization]** - [Brief description]
-- **[Feature 4]** - [Brief description]
+- **Interactive Initialization** - Quickly bootstrap design context (`PRODUCT.md` and `DESIGN.md`) via simple CLI prompts.
+- **Design Mutations** - Commands to tweak and mutate shapes, boldness, and other UI tokens dynamically.
+- **Stateless Operation** - Completely file-backed, relying on markdown files instead of a traditional database.
+- **Atomic Operations** - Safe file updates using temporary files and atomic renames to prevent state corruption.
 
 ## Built With
 
-This project leverages the following technologies:
+This project is built using:
 
-- **[e.g., Python]**
-- **[e.g., React]**
-- **[e.g., Node.js]**
-- **[e.g., MongoDB]**
+- **Node.js (ES Modules)**
+- **Vanilla Node.js standard libraries** (`fs`, `path`, `readline`, `process`)
 
 ---
 
@@ -55,43 +49,41 @@ Follow these steps to set up the project locally on your machine.
 
 Ensure you have the following installed:
 
-- **[e.g., Node.js v14+]**
-- **[e.g., Python 3.8+]**
+- **Node.js v14+**
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/your-username/Design_Agent.git
    ```
 
 2. **Navigate to the project directory**
    ```bash
-   cd your-repo-name
+   cd Design_Agent
    ```
 
-3. **Install dependencies**
+3. **Install and Link**
    ```bash
-   # [e.g., npm install]
+   npm install
+   npm link
    ```
-
-4. **Start the application**
+   Or install it globally:
    ```bash
-   # [e.g., npm start]
+   npm install -g .
    ```
 
 ---
 
 ## Usage
 
-Use this section to showcase how your project is used. You can add code snippets, screenshots, or demo links below.
+Before using advanced commands in any target directory, you must run the initialization command to establish the foundational design context.
 
-```javascript
-// [Placeholder: Add your code example here]
-console.log("Welcome to [Insert Project Name]!");
+```bash
+renkin init
 ```
 
-*(Placeholder for Screenshot: `![Application Screenshot](path/to/screenshot.png)`)*
+This will interactively prompt you and generate `PRODUCT.md` and `DESIGN.md` in your current working directory. You can then use other commands to interact with or modify the frontend.
 
 ---
 
@@ -109,14 +101,4 @@ Contributions are always welcome! If you'd like to improve this project, please 
 
 ## License
 
-Distributed under the **[e.g., MIT, Apache 2.0]** License. See `LICENSE` for more information.
-
----
-
-## Contact
-
-**[Your Name / Your Organization]** 
-
-- **Email:** [your.email@example.com](mailto:your.email@example.com)
-- **Twitter:** [@your_handle](https://twitter.com/your_handle)
-- **Project Link:** [https://github.com/your-username/your-repo-name](https://github.com/your-username/your-repo-name)
+Distributed under the **ISC** License. See `package.json` for more information.
