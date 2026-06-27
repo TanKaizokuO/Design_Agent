@@ -19,6 +19,14 @@ Before running any design commands, you must initialize the context. This sets u
 ```bash
 design_skill init
 ```
+This command will interactively prompt you for project requirements:
+- Project Goal
+- Target Audience
+- Brand Personality
+- Typographic Feeling
+- Base Color (must be a valid HEX code)
+
+Alternatively, if you run `/design_skill init` in your AI chat interface, the AI agent will ask you these questions directly.
 
 ### 2. Available Commands
 Once initialized, you can run various commands to iterate on the design.
