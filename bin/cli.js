@@ -25,9 +25,16 @@ function main() {
   if (command !== 'init') {
     const cwd = process.cwd();
     const productPath = path.join(cwd, 'PRODUCT.md');
-    // const designPath = path.join(cwd, 'DESIGN.md');
     
-    if (!fs.existsSync(productPath)) {
+    let isInitialized = false;
+    if (fs.existsSync(productPath)) {
+      const productContent = fs.readFileSync(productPath, 'utf-8');
+      if (productContent.includes('design_skill_initialized: true')) {
+        isInitialized = true;
+      }
+    }
+    
+    if (!isInitialized) {
       console.error(`Error: Missing Context. Please run 'design_skill init' to establish the foundational design context first.`);
       process.exit(1);
     }
