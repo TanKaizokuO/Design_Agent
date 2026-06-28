@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { runEngine } from './engine/runner.js';
+import { checkA11y } from './audit/a11y.js';
+import { checkResponsive } from './audit/responsive.js';
+import { checkPerformance } from './audit/performance.js';
 
-export function runAudit(targetDir) {
+export async function runAudit(targetDir) {
   let target = targetDir;
   
   if (!target) {
@@ -23,17 +26,27 @@ export function runAudit(targetDir) {
   }
 
   try {
-    const allFindings = runEngine(absoluteTarget);
+    const engineFindings = runEngine(absoluteTarget);
+    const a11yFindings = await checkA11y(absoluteTarget);
+    const responsiveFindings = checkResponsive(absoluteTarget);
+    const performanceFindings = checkPerformance(absoluteTarget);
+    
+    let allFindings = [
+      ...engineFindings,
+      ...a11yFindings,
+      ...responsiveFindings,
+      ...performanceFindings
+    ];
     
     // Filter out stubs just in case
     const findings = allFindings.filter(f => !f.ruleId.startsWith('_stub_'));
 
     if (findings.length === 0) {
-      console.log('✅ Audit passed! No design anti-patterns found.');
+      console.log('✅ Audit passed! No design anti-patterns or technical issues found.');
       process.exit(0);
     }
 
-    console.log(`❌ Audit failed. Found ${findings.length} design anti-pattern(s):\n`);
+    console.log(`❌ Audit failed. Found ${findings.length} issue(s):\n`);
 
     findings.forEach(finding => {
       console.log(`[${finding.ruleId}] ${finding.file}:${finding.line}`);

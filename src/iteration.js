@@ -34,6 +34,14 @@ export function runIterationCommand(command, targetDir) {
   }
 
   const prompts = {
+    critique: `Provide a design critique against standard principles:
+- Evaluate the current design against established UI/UX principles.
+- Identify areas for improvement in hierarchy, contrast, and alignment.
+- Suggest actionable changes without implementing them directly.`,
+    craft: `Apply fine-tuned micro-design improvements:
+- Adjust micro-interactions and transitions for a premium feel.
+- Fine-tune border radiuses and subtle shadows to create depth.
+- Enhance typography with optimal line height and letter spacing.`,
     shape: `Refine structural layout and spacing:
 - Target the parent container. Convert arbitrary 'margin' on flex/grid children to 'gap' on the parent.
 - Align all spacing properties (padding, gap, margin) to the 4px/8px baseline grid.
