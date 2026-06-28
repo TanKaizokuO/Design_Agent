@@ -28,7 +28,11 @@ RENKIN is a CLI tool that helps developers generate and iterate on premium web f
 ## Features
 
 - **Interactive Initialization** - Quickly bootstrap design context (`PRODUCT.md` and `DESIGN.md`) via simple CLI prompts.
+- **Enforce Anti-patterns** - Run deterministic checks via CLI or browser extension to prevent the introduction of 44 known generic design tropes.
+- **Audit Interface** - Evaluate technical frontend quality, including accessibility (via axe-core), responsiveness, and performance constraints.
 - **Design Mutations** - Commands to tweak and mutate shapes, boldness, and other UI tokens dynamically.
+- **Extract Tokens & Components** - Scans files to identify and pull reusable UI components and design tokens into a centralized system (`tokens.css`).
+- **Document System** - Scans the codebase to generate root documentation (`DESIGN.md`) from an undocumented project.
 - **Stateless Operation** - Completely file-backed, relying on markdown files instead of a traditional database.
 - **Atomic Operations** - Safe file updates using temporary files and atomic renames to prevent state corruption.
 
