@@ -279,7 +279,86 @@
       description: 'Uses a small, brightly colored pill/chip above the main H1 (common generic pattern).',
       severity: 'warning',
       category: 'typography',
-      message: 'Remove the eyebrow chip or integrate the text more naturally into the heading hierarchy.'
+    },
+    {
+      id: 'anti-pure-black',
+      name: 'Anti Pure Black',
+      description: 'Avoid pure black. It creates eye strain. Use a dark gray like #1a1a1a.',
+      severity: 'warning',
+      category: 'color',
+      message: 'Use a dark gray like #1a1a1a instead.'
+    },
+    {
+      id: 'anti-inter-default',
+      name: 'Anti Inter Default',
+      description: 'Avoid default generic usage of "Inter".',
+      severity: 'warning',
+      category: 'typography',
+      message: 'Refine typographic scales or use another font.'
+    },
+    {
+      id: 'anti-bounce-ease',
+      name: 'Anti Bounce Ease',
+      description: 'Avoid generic bounce easings.',
+      severity: 'warning',
+      category: 'motion',
+      message: 'Use refined spring mechanics.'
+    },
+    {
+      id: 'anti-generic-blue',
+      name: 'Anti Generic Blue',
+      description: 'Avoid generic unrefined blues.',
+      severity: 'warning',
+      category: 'color',
+      message: 'Use a brand-specific blue instead.'
+    },
+    {
+      id: 'anti-pure-white',
+      name: 'Anti Pure White',
+      description: 'Avoid pure white. It lacks depth.',
+      severity: 'warning',
+      category: 'color',
+      message: 'Use an off-white instead.'
+    },
+    {
+      id: 'anti-comic-sans',
+      name: 'Anti Comic Sans',
+      description: 'Avoid Comic Sans MS.',
+      severity: 'error',
+      category: 'typography',
+      message: 'Use a professional typeface.'
+    },
+    {
+      id: 'anti-papyrus',
+      name: 'Anti Papyrus',
+      description: 'Avoid Papyrus.',
+      severity: 'error',
+      category: 'typography',
+      message: 'Use a modern display font.'
+    },
+    {
+      id: 'anti-centered-text',
+      name: 'Anti Centered Text',
+      description: 'Avoid centered text for long paragraphs.',
+      severity: 'warning',
+      category: 'typography',
+      message: 'Left-align long blocks of text.'
+    },
+    {
+      id: 'anti-transparent-text',
+      name: 'Anti Transparent Text',
+      description: 'Avoid transparent text without clear reason.',
+      severity: 'warning',
+      category: 'color',
+      message: 'Ensure text is visible.'
+    },
+    {
+      id: 'anti-absolute-positioning',
+      name: 'Anti Absolute Positioning',
+      description: 'Minimize absolute positioning for layouts.',
+      severity: 'warning',
+      category: 'layout',
+      message: 'Prefer Flexbox or Grid.'
     }
   ];
 

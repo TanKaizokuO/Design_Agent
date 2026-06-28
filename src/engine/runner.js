@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import './rules.js';
+import { detect } from './detector.mjs';
 
 const rules = globalThis.DesignRules;
 export function walkDir(dir, fileList = []) {
@@ -20,19 +21,31 @@ export function walkDir(dir, fileList = []) {
 }
 
 export function evaluateContent(content, ext) {
-  const applicableRules = rules.filter(r => r.extensions.includes(ext));
-  if (applicableRules.length === 0) return [];
-
-  const lines = content.split(/\r?\n/);
+  // Pass content as html parameter for now; document/window are null in CLI context
+  const rawFindings = detect(content, null, null);
   const findings = [];
 
-  for (const rule of applicableRules) {
-    const matches = rule.evaluate(content, lines);
-    for (const match of matches) {
+  for (const finding of rawFindings) {
+    const ruleMetadata = rules.find(r => r.id === finding.id);
+    if (ruleMetadata) {
       findings.push({
-        ruleId: rule.id,
-        line: match.line,
-        snippet: match.snippet
+        ruleId: finding.id,
+        line: finding.line || 1,
+        snippet: finding.snippet || '',
+        name: ruleMetadata.name,
+        message: ruleMetadata.message,
+        severity: ruleMetadata.severity,
+        category: ruleMetadata.category
+      });
+    } else {
+      findings.push({
+        ruleId: finding.id,
+        line: finding.line || 1,
+        snippet: finding.snippet || '',
+        name: 'Unknown Rule',
+        message: 'No metadata found for this rule.',
+        severity: finding.severity || 'warning',
+        category: 'unknown'
       });
     }
   }
